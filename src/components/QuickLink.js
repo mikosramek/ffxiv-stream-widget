@@ -13,7 +13,7 @@ const QuickLink = (props) => {
     <Link 
       className={`galleryButton${props.id === undefined ? ' disabled' : ''}`} 
       onClick={checkQuickLink} 
-      to={ props.id === undefined ? `/${props.destination}/` : `/${props.destination}/${props.id.id}`}
+      to={ props.id === undefined ? `/${props.destination}/` : `#/${props.destination}/${props.id.id}`}
     >
       Quick
     </Link>
