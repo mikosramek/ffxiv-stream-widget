@@ -36,7 +36,6 @@ class CharacterWidget extends React.Component {
         lodestone_id: this.props.match.params.id
       }, this.getCharacterData);
     }
-    
   }
   getCharacterData = () => {
     axios({
@@ -77,9 +76,9 @@ class CharacterWidget extends React.Component {
     axios.all([jobDetails, titleDetails]).then((response) => {
       const a = {};
       a.title = response[1].data.Results[0].Name;
-      a.titleImg = 'https://xivapi.com/' + response[1].data.Results[0].Icon;
+      a.titleImg = 'https://xivapi.com' + response[1].data.Results[0].Icon;
       a.job = response[0].data.Results[0].Name;
-      a.jobImg = 'https://xivapi.com/' + response[0].data.Results[0].Icon;
+      a.jobImg = 'https://xivapi.com' + response[0].data.Results[0].Icon;
       this.setState({
         extraInfo: a
       }, () => {

@@ -190,3 +190,45 @@ footer p {
   margin-top: 5px;
   font-size: 1.2rem;
 }
+
+
+.jobWidgetList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.jobWidgetList li {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+.jobDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.jobWidgetList img {
+  width: 30px;
+  height: 30px;
+}
+.expBar {
+  width: 100%;
+  height: 5px;
+  position: relative;
+}
+.expBar span {
+  height: 100%;
+  display: block;
+  top: 0;
+}
+.expCurrent {
+  position: absolute;
+  left: 0;
+  background: rgb(255, 119, 119);
+}
+.expTotal {
+  position: absolute;
+  right: 0;
+  background: rgb(146, 88, 88);
+}

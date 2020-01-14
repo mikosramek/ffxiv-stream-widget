@@ -8,6 +8,7 @@ import WidgetGallery from './components/WidgetGallery';
 import CharacterSummary from './components/CharacterSummary';
 import CharacterWidget from './components/CharacterWidget';
 
+import JobsWidget from './components/JobsWidget';
 
 class App extends React.Component {
 
@@ -81,7 +82,7 @@ class App extends React.Component {
         <Route exact path="/achievements" component={()=> <CharacterSummary playerInfo={this.state.playerInfo} /> } />
 
         <Route path="/character/:id" component={CharacterWidget} />
-        <Route path="/jobs/:id" component={CharacterWidget} />
+        <Route path="/jobs/:id" component={JobsWidget} />
         <Route path="/achievements/:id" component={CharacterWidget} />
 
       </ Router>

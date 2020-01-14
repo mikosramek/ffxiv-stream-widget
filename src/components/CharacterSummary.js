@@ -140,7 +140,7 @@ class CharacterSummary extends React.Component {
               </div>
             </div>
             <h3>Link to widget:</h3>
-            <input onClick={this.copyToClipboard} ref={(input) => this.input = input} className="widgetUrl" readOnly type="text" value={window.location.href.replace(window.location.pathname, '')+widget_url} />
+            <input onClick={this.copyToClipboard} ref={(input) => this.input = input} className="widgetUrl" readOnly type="text" value={window.location.href.replace('/character', '') + widget_url} />
             <p><Link className='galleryButton' to={widget_url}>Go To Widget</Link></p>
           </div>
         </main>
