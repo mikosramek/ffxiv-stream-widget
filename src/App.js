@@ -7,7 +7,7 @@ import './App.css';
 import WidgetGallery from './components/WidgetGallery';
 import CharacterSummary from './components/CharacterSummary';
 import CharacterWidget from './components/CharacterWidget';
-
+import JobsSummary from './components/JobsSummary';
 import JobsWidget from './components/JobsWidget';
 
 class App extends React.Component {
@@ -78,7 +78,7 @@ class App extends React.Component {
       <Router>
         <Route exact path="/" component={() => <WidgetGallery setCharacterInfo={this.setCharacterInfo} playerInfo={this.state.playerInfo} servers={this.state.servers} clearPlayerInfo={this.clearPlayerInfo} />} />
         <Route exact path="/character" component={() =>  <CharacterSummary playerInfo={this.state.playerInfo} />} />
-        <Route exact path="/jobs" component={() =>  <CharacterSummary playerInfo={this.state.playerInfo} /> } />
+        <Route exact path="/jobs" component={() =>  <JobsSummary playerInfo={this.state.playerInfo} /> } />
         <Route exact path="/achievements" component={()=> <CharacterSummary playerInfo={this.state.playerInfo} /> } />
 
         <Route path="/character/:id" component={CharacterWidget} />

@@ -79,22 +79,15 @@ class WidgetGallery extends React.Component {
                   <ConditionalLink destination={`character/${this.props.playerInfo ? this.props.playerInfo.id : ''}`} disabled={this.props.playerInfo === undefined}>Quick</ConditionalLink>
                 </div>
               </li>
-              {/* <li>
+              <li>
                 <h2>Jobs</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quia ratione laborum. Eligendi, laboriosam natus.</p>
+                <p>A sidebar to showcase all job levels and current exp for each one.</p>
                 <div className="galleryLinks">
-                  <Link className='galleryButton' to='/character'>Configure</Link>
-                  <QuickLink id={this.props.playerInfo} destination='character' />
+                  <ConditionalLink destination={`jobs/`} disabled={this.props.playerInfo === undefined}>Configure</ConditionalLink>
+                  <ConditionalLink destination={`jobs/${this.props.playerInfo ? this.props.playerInfo.id : ''}`} disabled={this.props.playerInfo === undefined}>Quick</ConditionalLink>
                 </div>
               </li>
-              <li>
-                <h2>Achievements</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, voluptatibus!</p>
-                <div className="galleryLinks">
-                  <Link className='galleryButton' to='/character'>Configure</Link>
-                  <QuickLink id={this.props.playerInfo} destination='character' />
-                </div>
-              </li> */}
+              
             </ul>
           </div>
         </main>

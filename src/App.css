@@ -42,6 +42,7 @@ footer {
 }
 h1 {
   padding: 15px 0;
+  padding-bottom: 5px;
 }
 h2 {
   font-size: 2.8rem;
@@ -58,6 +59,7 @@ footer {
 }
 footer p {
   padding: 6.5px;
+  padding-top: 30px;
 }
 .widgetGalleryList {
   display: flex;
@@ -112,6 +114,9 @@ footer p {
 .profileImage {
   width: 100px;
 }
+.profileImage img {
+  border-radius: 100px;
+}
 
 .characterSummary {
   color: white;
@@ -144,6 +149,7 @@ footer p {
 .widgetUrl {
   width: 100%;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .head {
@@ -202,6 +208,7 @@ footer p {
   display: flex;
   flex-direction: column;
   margin-right: 5px;
+  padding: 5px;
 }
 .jobDetails {
   display: flex;

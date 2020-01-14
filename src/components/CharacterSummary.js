@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import {hexToRgb} from '../utility/colors';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -27,16 +27,6 @@ class CharacterSummary extends React.Component {
     });
   }
 
-  //https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
-  hexToRgb(hex, alpha) {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-      a: parseFloat(alpha)
-    } : null;
-  }
 
   componentDidMount() {
     if(this.props.playerInfo !== undefined){
@@ -49,7 +39,7 @@ class CharacterSummary extends React.Component {
 
   updateURL = () => {
     const { display_portrait, display_title, display_server, update_rate, widget_url } = this.state;
-    const color = this.hexToRgb(this.state.background_color, this.state.background_transparency);//+this.state.background_transparency;
+    const color = hexToRgb(this.state.background_color, this.state.background_transparency);//+this.state.background_transparency;
     const rgb = `rgb(${color.r},${color.g},${color.b},${color.a})`;
     const url = `/character/${this.props.playerInfo.id}?display_portrait=${display_portrait}&display_title=${display_title}&display_server=${display_server}&update_rate=${update_rate}&background_color=${rgb}`;
     if(widget_url !== url) {
@@ -67,7 +57,7 @@ class CharacterSummary extends React.Component {
   
   render() {
     const { display_portrait, display_title, display_server, update_rate, widget_url } = this.state;
-    const color = this.hexToRgb(this.state.background_color, this.state.background_transparency);//+this.state.background_transparency;
+    const color = hexToRgb(this.state.background_color, this.state.background_transparency);//+this.state.background_transparency;
     const rgb = `rgb(${color.r},${color.g},${color.b},${color.a})`;
     return(
       <>
@@ -126,7 +116,7 @@ class CharacterSummary extends React.Component {
                     ?
                       <div className="portrait">
                         <img className="character" src='https://img2.finalfantasyxiv.com/f/406feef47d2894f6ade38ccd577c796b_58a84e851e55175d22158ca97af58a1ffc0_96x96.jpg?1578787457' alt={`The character portrait for Miko.`}/>
-                        <img src='https://xivapi.com//cj/1/warrior.png' alt='Warrior icon' className="jobIcon" />
+                        <img src='https://xivapi.com/cj/1/warrior.png' alt='Warrior icon' className="jobIcon" />
                       </div>
                     : null
                   }
@@ -140,9 +130,9 @@ class CharacterSummary extends React.Component {
               </div>
             </div>
             <h3>Link to widget:</h3>
-            <input onClick={this.copyToClipboard} ref={(input) => this.input = input} className="widgetUrl" readOnly type="text" value={window.location.href.replace('/character', '') + widget_url} />
+            <input onClick={this.copyToClipboard} ref={(input) => this.input = input} className="widgetUrl" readOnly type="text" value={window.location.href.replace('/#/character/', '/#') + widget_url} />
             <p><Link className='galleryButton' to={widget_url}>Go To Widget</Link></p>
-          </div>
+          </div> {/* End of Wrapper */}
         </main>
         <Footer />
       </>

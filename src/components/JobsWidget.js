@@ -80,7 +80,7 @@ class JobsWidget extends React.Component {
   
   render() {
     return(
-      <ul className="jobWidgetList" style={{'flexDirection':this.state.list_direction}}>
+      <ul className="jobWidgetList" style={{'flexDirection':this.state.list_direction, background:this.state.background_color}}>
         {
           this.state.jobs.map((job) => {
             return (
