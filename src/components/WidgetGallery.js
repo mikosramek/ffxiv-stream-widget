@@ -1,11 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 import ServerSelect from './ServerSelect';
 import Header from './Header';
 import Footer from './Footer';
-import QuickLink from './QuickLink';
+import ConditionalLink from './ConditionalLink';
 
 class WidgetGallery extends React.Component {
   constructor() {
@@ -74,10 +73,10 @@ class WidgetGallery extends React.Component {
               </li>
               <li>
                 <h2>Character</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor officia modi vero fugit iste? Consequuntur aperiam porro dolores maiores corrupti.</p>
+                <p>A general overview of your character's profile.</p>
                 <div className="galleryLinks">
-                  <Link className='galleryButton' to='/character'>Configure</Link>
-                  <QuickLink id={this.props.playerInfo} destination='character' />
+                  <ConditionalLink destination={`character/`} disabled={this.props.playerInfo === undefined}>Configure</ConditionalLink>
+                  <ConditionalLink destination={`character/${this.props.playerInfo ? this.props.playerInfo.id : ''}`} disabled={this.props.playerInfo === undefined}>Quick</ConditionalLink>
                 </div>
               </li>
               {/* <li>
