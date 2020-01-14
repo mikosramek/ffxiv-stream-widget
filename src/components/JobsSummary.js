@@ -12,7 +12,7 @@ class JobsSummary extends React.Component {
       display_careers: true,
       display_unleveled_jobs: true,
       background_color: '#ffffff',
-      background_transparency: 0.5,
+      background_transparency: 0.6,
       update_rate: 0,
       list_direction: 'column',
       widget_url: '/'
@@ -47,7 +47,12 @@ class JobsSummary extends React.Component {
       list_direction: e.target.value
     });
   }
-
+  //https://stackoverflow.com/questions/39501289/in-reactjs-how-to-copy-text-to-clipboard
+  copyToClipboard = (e) => {
+    this.input.select();
+    document.execCommand('copy');
+    e.target.focus();
+  };
 
   render() {
     const { display_careers, display_unleveled_jobs, list_direction, update_rate, widget_url } = this.state;

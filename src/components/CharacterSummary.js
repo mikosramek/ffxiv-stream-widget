@@ -13,7 +13,7 @@ class CharacterSummary extends React.Component {
       display_server: true,
       update_rate: 0,
       background_color: '#ffffff',
-      background_transparency: '0.8',
+      background_transparency: '0.6',
       widget_url: '/'
     }
   }
